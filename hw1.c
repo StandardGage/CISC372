@@ -24,11 +24,22 @@ void matrixArrayOfArrays(int m, int n)
             matrix[i][j] = i * n + j + 1;
         }
     }
+    // print row by row
     for (int i = 0; i < m; i++)
     {
         for (int j = 0; j < n; j++)
         {
-            printf("\t%f ", matrix[i][j]);
+            printf("%f\t ", matrix[i][j]);
+        }
+        printf("\n");
+    }
+    printf("\n");
+    // print column by column
+    for (int j = 0; j < n; j++)
+    {
+        for (int i = 0; i < m; i++)
+        {
+            printf("%f\t ", matrix[i][j]);
         }
         printf("\n");
     }
@@ -58,11 +69,22 @@ void matrixOneBigArray(int m, int n)
     {
         bigArray[i] = i + 1;
     }
+    // print row by row
     for (int i = 0; i < m; i++)
     {
         for (int j = 0; j < n; j++)
         {
-            printf("\t%f ", matrix[i][j]);
+            printf("%f\t ", matrix[i][j]);
+        }
+        printf("\n");
+    }
+    printf("\n");
+    // print column by column
+    for (int j = 0; j < n; j++)
+    {
+        for (int i = 0; i < m; i++)
+        {
+            printf("%f\t ", matrix[i][j]);
         }
         printf("\n");
     }
