@@ -39,7 +39,7 @@ void matrixArrayOfArrays(int m, int n)
     {
         for (int i = 0; i < m; i++)
         {
-            printf("%f\t ", matrix[i][j]);
+            printf("%f\t", matrix[i][j]);
         }
         printf("\n");
     }
@@ -74,7 +74,7 @@ void matrixOneBigArray(int m, int n)
     {
         for (int j = 0; j < n; j++)
         {
-            printf("%f\t ", matrix[i][j]);
+            printf("%f\t", matrix[i][j]);
         }
         printf("\n");
     }
