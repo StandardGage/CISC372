@@ -132,5 +132,5 @@ int main(int argc, char *argv[]) {
 
 /* you can compile and run the program on cisc372.cis.udel.edu using the following commands:
  *   mpicc mpi_mcpi.c -lm -o pi
- *   srun -n <numprocs> ./pi
+ *   srun -n <numprocs> ./pi <numpoints>
  */
