@@ -83,9 +83,12 @@ int main(int argc, char *argv[]) {
     MPI_Comm_size(MPI_COMM_WORLD, &comm_sz);
     MPI_Comm_rank(MPI_COMM_WORLD, &my_rank);
     
-    int randomNumber;
+    int randomArray[comm_sz];
     if (my_rank == 0) {
-        randomNumber = rand();
+        // Generate random numbers for each process
+        for (int i = 0; i < comm_sz; i++) {
+            randomArray[i] = rand();
+        }
         /* Check command line arguments for correctness and read the parameters from argv */
         if (argc != 2) {
             printf("Usage: pi <npoints>\n");
@@ -97,8 +100,9 @@ int main(int argc, char *argv[]) {
     /*** TODO 6: Add code that ensures that every process has the input value for n */
     MPI_Bcast(&n, 1, MPI_LONG, 0, MPI_COMM_WORLD);
 
+    // Scatter the random numbers to each process
     int receivedNumber;
-    MPI_Scatter(&randomNumber, 1, MPI_INT, &receivedNumber, 1, MPI_INT, 0, MPI_COMM_WORLD);
+    MPI_Scatter(randomArray, 1, MPI_INT, &receivedNumber, 1, MPI_INT, 0, MPI_COMM_WORLD);
 
     /* set a random seed */
     srand(receivedNumber);
